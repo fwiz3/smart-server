@@ -1,0 +1,37 @@
+{
+    "configs": {
+        "1": {
+            "device_type": "light-auto",
+            "statusView": "yes",
+            "control": "toggle",
+            "color": "no",
+            "colorTemp": "no",
+            "dimming": "no"
+        },
+        "2": {
+            "device_type": "light-manual",
+            "statusView": "yes",
+            "control": "am",
+            "color": "no",
+            "colorTemp": "no",
+            "dimming": "no"
+        }
+    },
+    "devices": {
+        "1": {
+            "name": "Bedroom Light",
+            "id": "90147f30-55b5-4ec7-a8e3-cf9f57e9b68f",
+            "ip": "192.168.1.78",
+            "port": null,
+            "currentMode": "manual",
+            "state": {
+                "currentState": "off",
+                "updatedAt": "2025-09-23 12:34:53",
+                "controlWith": null,
+                "scheduledAt": null,
+                "offset": null
+            },
+            "device_type": "light-manual"
+        }
+    }
+}
