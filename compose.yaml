@@ -1,0 +1,61 @@
+services:
+  smart-server-dev:
+    build:
+      context: .
+      target: dev
+    container_name: smart-server-dev
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount only source code (all Python files except data)
+      - .:/app
+      - ./data:/app/data   # explicitly mount data dir to persist db
+    develop:
+      watch:
+        - action: sync
+          path: ./          # sync project root
+          target: /app
+          ignore:
+            - __pycache__/
+            - node_modules/
+            - data/         # don't sync over the runtime db dir
+        - action: rebuild
+          path: requirements.txt
+    networks:
+      - smart_server_network
+
+  smart-server-prod:
+    build:
+      context: .
+      target: prod
+    container_name: smart-server-prod
+    ports:
+      - "8001:8000"
+    restart: unless-stopped
+    volumes:
+      - ./data:/app/data
+    networks:
+      - smart_server_network
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_config:/mosquitto/config
+      - mosquitto_log:/mosquitto/log
+    restart: unless-stopped
+    networks:
+      - smart_server_network
+
+networks:
+  smart_server_network:
+    driver: bridge
+
+volumes:
+  mosquitto_data:
+  mosquitto_config:
+  mosquitto_log:
