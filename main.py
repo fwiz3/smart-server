@@ -22,6 +22,11 @@ app.include_router(
     tags=["Get all devices"],
 )
 app.include_router(
+    router=__import__("v1.routes.update.controller.update_device", fromlist=["router"]).router,
+    prefix="/api/v1",
+    tags=["Update device"],
+)
+app.include_router(
     router=__import__("v1.routes.removeDevice.controller.remove_devices", fromlist=["router"]).router,
     prefix="/api/v1",
     tags=["Remove devices"],

@@ -19,19 +19,20 @@
     },
     "devices": {
         "1": {
-            "name": "Bedroom Light",
-            "id": "90147f30-55b5-4ec7-a8e3-cf9f57e9b68f",
-            "ip": "192.168.1.78",
+            "name": "dinning light",
+            "id": "cb9fc719-aab1-4e56-afaf-111815121d60",
+            "ip": "192.168.1.18",
             "port": null,
             "currentMode": "manual",
             "state": {
                 "currentState": "off",
-                "updatedAt": "2025-09-23 12:34:53",
+                "updatedAt": "2025-09-23 18:41:42",
+                "power": "off",
                 "controlWith": null,
                 "scheduledAt": null,
                 "offset": null
             },
-            "device_type": "light-manual"
+            "device_type": "light-auto"
         }
     }
 }
