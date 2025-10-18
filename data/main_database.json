@@ -15,18 +15,40 @@
             "color": "no",
             "colorTemp": "no",
             "dimming": "no"
+        },
+        "3": {
+            "device_type": "emergy-meter-sensor",
+            "statusView": "yes",
+            "control": "no"
         }
     },
     "devices": {
         "1": {
-            "name": "dinning light",
-            "id": "cb9fc719-aab1-4e56-afaf-111815121d60",
+            "name": "Bedroom Light",
+            "id": "221e8a48-b077-4472-bb0d-414a2bcef373",
             "ip": "192.168.1.18",
             "port": null,
-            "currentMode": "manual",
+            "currentMode": null,
+            "autoControlWith": null,
+            "scheduledAt": null,
+            "offset": null,
             "state": {
                 "currentState": "off",
-                "updatedAt": "2025-09-23 18:41:42",
+                "updatedAt": "2025-10-14 06:28:52",
+                "power": "off"
+            },
+            "device_type": "light-auto"
+        },
+        "2": {
+            "name": "Bedroom Light",
+            "id": "d555549f-f765-45e6-a2b7-66d1f00ab485",
+            "ip": "192.168.1.180",
+            "port": null,
+            "currentMode": null,
+            "autoControlWith": null,
+            "state": {
+                "currentState": "off",
+                "updatedAt": "2025-10-05 16:00:38",
                 "power": "off",
                 "controlWith": null,
                 "scheduledAt": null,

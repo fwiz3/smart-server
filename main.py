@@ -6,11 +6,7 @@ app.include_router(
     prefix="/api/v1",
     tags=["Add Device"],
 )
-# app.include_router(
-#     router=__import__("v1.routers.toggle_state", fromlist=["router"]).router,
-#     prefix="/api/v1",
-#     tags=["Toggle Device State"],
-# )
+
 app.include_router(
     router=__import__("v1.routes.device.controllers.get_device", fromlist=["router"]).router,
     prefix="/api/v1",

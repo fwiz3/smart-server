@@ -7,4 +7,5 @@ router = APIRouter()
 
 @router.patch("/devices/{device_id}")
 async def update_device(device_id: str, payload: DeviceUpdate):
-    update_dev_method(device_id, payload)
+    res=update_dev_method(device_id, payload)
+    return res

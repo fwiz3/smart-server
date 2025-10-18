@@ -2,6 +2,7 @@ from pydantic import BaseModel
 from typing import Optional
 
 class StateUpdate(BaseModel):
+    power: Optional[str]=None
     currentState: Optional[str] = None
     controlWith: Optional[str] = None
     scheduledAt: Optional[str] = None
