@@ -2,12 +2,11 @@ from fastapi import APIRouter, HTTPException, Path, Body
 from tinydb import Query
 
 from data.db import devices_table
-from v1.routes.addDevices.services.add_device_method import add_device
-from utility.services.isIp import is_ip
+from services.devices_service import add_device
+from utility.isIp import is_ip
 from v1.model.device_config import Device
 
 router = APIRouter()
-
 
 # Get table references
 @router.post(

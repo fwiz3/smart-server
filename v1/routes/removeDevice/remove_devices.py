@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path
 
-from v1.routes.removeDevice.services.removeAllDevice import remove_all_devices
-from v1.routes.removeDevice.services.removeDevice import remove_device_with_id
+from services.devices_service import remove_all_devices
+from services.devices_service import remove_device_with_id
 
 router = APIRouter()
 

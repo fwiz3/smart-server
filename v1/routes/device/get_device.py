@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
-from v1.routes.device.services.reload import reload
+from services.devices_service import reload
 from v1.model.device_config import Device
 
 router = APIRouter()

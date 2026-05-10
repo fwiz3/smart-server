@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
-from v1.routes.getDevices.services.get_all_devices_method import get_all_devices
+from services.devices_service import get_all_devices
 router = APIRouter()
 
 @router.get(path='/get-all',description="show all the devices in the added list")

@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from v1.model.update_device_model import DeviceUpdate
-from v1.routes.update.services.update_device_method import update_dev_method
+from services.devices_service import update_dev_method
 
 router = APIRouter()
 
