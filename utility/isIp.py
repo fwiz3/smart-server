@@ -5,4 +5,3 @@ def is_ip(value:str):
         return True
     except ValueError:
         return False
-

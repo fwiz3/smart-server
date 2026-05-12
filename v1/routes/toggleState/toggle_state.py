@@ -1,16 +1,14 @@
 from fastapi import APIRouter,Header
 from fastapi.responses import JSONResponse
 from aiomqtt import Client
+
+from core.mqtt.mqtt_init import MQTT_BROKER, MQTT_PORT, MQTT_TOPIC
 from data.db import devices_table
 from tinydb import  Query
 from datetime import datetime
 
 router = APIRouter()
 
-MQTT_BROKER = "0.0.0.0"  # or your broker IP
-MQTT_PORT = 1883
-MQTT_TOPIC = "home/light/relay1/set"
-MQTT_STATE_TOPIC = "home/light/relay1/state"
 
 async def publish_mqtt(state: str):
     async with Client(MQTT_BROKER, MQTT_PORT) as client:

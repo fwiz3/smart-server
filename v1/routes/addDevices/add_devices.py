@@ -16,20 +16,20 @@ router = APIRouter()
 async def setup_devices(
         metadata: Device = Body(..., description="Metadata of the device to be added",
                                 examples=["{\"name\": \"Bedroom Light\", \n \"ip\": \"192.168.1.18\"}"]),
-        device_type: str = Path(..., description="Type of the device", examples=['light_auto', 'light_manual']),
+        device_type: str = Path(..., description="Type of the device", example='light_auto or light_manual'),
 ):
     if metadata.ip is None or metadata.id is None or not is_ip(metadata.ip):
         raise HTTPException(
             status_code=400,
-            detail="IP address and ID must be provided with valid IP format",
+            detail="IP address and ID must be provided with valid a IP format",
         )
 
     try:
-        DeviceQuery = Query()
+        device_query = Query()
 
         # Check if device already exists
         existing_device = devices_table.get(
-            (DeviceQuery.id == metadata.id) | (DeviceQuery.ip == metadata.ip)
+            (device_query.id == metadata.id) | (device_query.ip == metadata.ip)
         )
 
         if existing_device:
